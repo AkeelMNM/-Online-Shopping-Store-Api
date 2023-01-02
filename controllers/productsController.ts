@@ -13,12 +13,18 @@ export const getAllProducts = (req: Request, res: Response, next: NextFunction) 
 }
 
 export const getProductsByCategory = (req: Request, res: Response, next: NextFunction) => {
-    // products.map((product: Product) => {
-    //     console.log(product.variants);
-    // })
+    const categorizedProducts: Product[] = new Array();
+    const name = req.params.name;
 
-    console.log(products[0].variants);
+    products.map((product: Product) => {
+        if (product.category.includes(name)) {
+            categorizedProducts.push(product)
+        }
+    })
 
+    res.statusCode = 200;
+    res.setHeader("Content-Type", "application/json")
+    res.json(categorizedProducts);
 }
 
 export const getProduct = (req: Request, res: Response, next: NextFunction) => {

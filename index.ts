@@ -28,6 +28,8 @@ app.listen(5000, () => {
 app.use(json());
 app.use(cors());
 
+app.use('/public', express.static(path.join(__dirname, 'public')));
+
 app.use('/', indexRouter);
 app.use('/product', productsRouter);
 
