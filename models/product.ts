@@ -1,4 +1,4 @@
-export interface Product {
+export type Product = {
     id: string,
     category: string[],
     title: string,
@@ -6,7 +6,7 @@ export interface Product {
     variants: Variant[]
 }
 
-interface Variant {
+type Variant = {
     id: string,
     size: string,
     color: string,

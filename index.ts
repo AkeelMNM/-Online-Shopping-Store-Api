@@ -1,6 +1,5 @@
 import express, { Request, Response, NextFunction, ErrorRequestHandler } from 'express';
 import createError from "http-errors";
-import mongoose from 'mongoose'
 import { json } from 'body-parser';
 import path from "path";
 import logger from "morgan";
@@ -20,10 +19,6 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
-
-app.listen(5000, () => {
-  console.log('server is listening on port 5000');
-})
 
 app.use(json());
 app.use(cors());
@@ -53,4 +48,8 @@ app.use(function (err: any, req: Request, res: Response, next: NextFunction) {
   res.render("error");
   console.error(err);
 });
+
+app.listen(5000, () => {
+  console.log('server is listening on port 5000');
+})
 
