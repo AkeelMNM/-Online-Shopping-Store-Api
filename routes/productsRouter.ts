@@ -1,6 +1,5 @@
 import express from 'express';
-import bodyParser from "body-parser";
-import { getAllProducts, getProductsByCategory, getProduct } from '../controllers/productsController';
+import { getAllProducts, getProductsByCategory } from '../controllers/productsController';
 
 const productsRouter = express.Router();
 

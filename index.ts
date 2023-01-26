@@ -1,4 +1,4 @@
-import express, { Request, Response, NextFunction, ErrorRequestHandler } from 'express';
+import express, { Request, Response, NextFunction } from 'express';
 import createError from "http-errors";
 import { json } from 'body-parser';
 import path from "path";
@@ -6,6 +6,8 @@ import logger from "morgan";
 import cors from "cors";
 import { indexRouter } from './routes/index';
 import { productsRouter } from './routes/productsRouter'
+import * as dotenv from 'dotenv';
+dotenv.config();
 
 const app = express();
 
@@ -49,7 +51,10 @@ app.use(function (err: any, req: Request, res: Response, next: NextFunction) {
   console.error(err);
 });
 
-app.listen(5000, () => {
-  console.log('server is listening on port 5000');
+//Assign in Port
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
+  console.log(`server is listening on port ${port}....`);
 })
 
