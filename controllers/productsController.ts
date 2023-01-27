@@ -1,7 +1,6 @@
 import { Request, Response, NextFunction } from 'express'
 import path from 'path';
 import fs from 'fs';
-import _ from 'lodash';
 import { Product } from '../models/Product';
 
 const productsJsonPath = path.join(__dirname, '../products.json');
