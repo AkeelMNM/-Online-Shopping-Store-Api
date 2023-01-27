@@ -1,10 +1,14 @@
 import { Request, Response, NextFunction } from 'express'
 import path from 'path';
 import fs from 'fs';
+import _ from 'lodash';
 import { Product } from '../models/Product';
 
 const productsJsonPath = path.join(__dirname, '../products.json');
 const products: Product[] = JSON.parse(fs.readFileSync(productsJsonPath, { encoding: 'utf-8' }));
+
+const productsFilterJsonPath = path.join(__dirname, '../productFilter.json');
+const productFilter = JSON.parse(fs.readFileSync(productsFilterJsonPath, { encoding: 'utf-8' }));
 
 export const getAllProducts = (req: Request, res: Response, next: NextFunction) => {
     try {
@@ -21,14 +25,33 @@ export const getAllProducts = (req: Request, res: Response, next: NextFunction) 
 
 }
 
+export const getProductsFilters = (req: Request, res: Response, next: NextFunction) => {
+    try {
+        if (!productFilter) {
+            next({ status: 404, message: `Products Filters not found`, stack: Error().stack });
+        } else {
+            res.statusCode = 200;
+            res.setHeader("Content-Type", "application/json")
+            res.json(productFilter);
+        }
+    } catch (error) {
+        next(error);
+    }
+
+}
+
 export const getProductsByCategory = (req: Request, res: Response, next: NextFunction) => {
     try {
         const categorizedProducts: Product[] = new Array();
-        const name = req.params.name;
+        const query = (<string>req.query.name).split(';');
 
         products.map((product: Product) => {
-            if (product.category.includes(name)) {
-                categorizedProducts.push(product)
+            const isProductExists = query.map(value => {
+                return product.category.indexOf(value) !== -1;
+            });
+
+            if (isProductExists.includes(true)) {
+                categorizedProducts.push(product);
             }
         })
 
