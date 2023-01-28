@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express'
 import path from 'path';
 import fs from 'fs';
-import { Product } from '../models/Product';
+import { Product } from '../models/product';
 
 const productsJsonPath = path.join(__dirname, '../products.json');
 const products: Product[] = JSON.parse(fs.readFileSync(productsJsonPath, { encoding: 'utf-8' }));

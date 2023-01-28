@@ -3,12 +3,29 @@ import createError from "http-errors";
 import { json } from 'body-parser';
 import path from "path";
 import logger from "morgan";
+import mongoose from 'mongoose';
 import cors from "cors";
-import { indexRouter } from './routes/index';
-import { productsRouter } from './routes/productsRouter'
 import * as dotenv from 'dotenv';
 import ErrorHandler from './middlewares/ErrorHandler';
+import { indexRouter } from './routes/index';
+import { productsRouter } from './routes/productsRouter'
+import { shoppingCartRouter } from './routes/shoppingCartRouter';
 dotenv.config();
+
+/**
+ * Connecting to MongoDB Server
+ */
+const url = `${process.env.DB_CONN_URL}/${process.env.DB_NAME}` || '';
+mongoose.set('strictQuery', false);
+const connect = mongoose.connect(url);
+connect.then(
+  (db) => {
+    console.log("MongoDB connected with the server");
+  },
+  (err) => {
+    console.log(err);
+  }
+);
 
 const app = express();
 
@@ -30,6 +47,7 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/product', productsRouter);
+app.use('/cart', shoppingCartRouter);
 
 /**
  * catch 404 and forward to error handler
