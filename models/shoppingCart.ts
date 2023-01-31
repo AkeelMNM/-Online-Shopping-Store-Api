@@ -43,6 +43,11 @@ const ShoppingCartSchema = new Schema<ShoppingCart>(
             default: "",
             required: true,
         },
+        color: {
+            type: String,
+            default: "",
+            required: true,
+        },
         quantity: {
             type: Number,
             default: 0,

@@ -39,6 +39,29 @@ export const getShoppingCartItemByUser = async (req: Request, res: Response, nex
 
 }
 
+export const updateShoppingCartItem = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+        if (!req.params) {
+            next({ status: 404, message: `No parameters passed`, stack: Error().stack });
+        }
+
+        if (!req.body) {
+            next({ status: 404, message: `No data passed in body`, stack: Error().stack });
+        }
+
+        const id = req.params.id;
+        await ShoppingCart.findByIdAndUpdate({ _id: id }, req.body, { new: true });
+
+        res.statusCode = 200;
+        res.setHeader("Content-Type", "application/json")
+        res.json({ status: 200, message: 'Shopping Cart Item Successfully Updated' });
+
+    } catch (error) {
+        next(error);
+    }
+
+}
+
 export const removeShoppingCartItem = async (req: Request, res: Response, next: NextFunction) => {
     try {
         if (!req.params) {
