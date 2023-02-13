@@ -4,7 +4,7 @@ import ShoppingCart from '../models/shoppingCart';
 export const storeShoppingCartItem = async (req: Request, res: Response, next: NextFunction) => {
     try {
         if (!req.body) {
-            next({ status: 404, message: `No body data passed`, stack: Error().stack });
+            next({ status: 404, message: `No data was passed in the request body`, stack: Error().stack });
         }
 
         const data = req.body;
@@ -23,7 +23,7 @@ export const storeShoppingCartItem = async (req: Request, res: Response, next: N
 export const getShoppingCartItemByUser = async (req: Request, res: Response, next: NextFunction) => {
     try {
         if (!req.params) {
-            next({ status: 404, message: `No parameters passed`, stack: Error().stack });
+            next({ status: 404, message: `No parameters were passed in the request`, stack: Error().stack });
         }
 
         const id = req.params.id;
@@ -41,12 +41,8 @@ export const getShoppingCartItemByUser = async (req: Request, res: Response, nex
 
 export const updateShoppingCartItem = async (req: Request, res: Response, next: NextFunction) => {
     try {
-        if (!req.params) {
-            next({ status: 404, message: `No parameters passed`, stack: Error().stack });
-        }
-
-        if (!req.body) {
-            next({ status: 404, message: `No data passed in body`, stack: Error().stack });
+        if (!req.params && !req.body) {
+            next({ status: 404, message: `No data was passed in parameters or in the body of the request.`, stack: Error().stack });
         }
 
         const id = req.params.id;
@@ -54,7 +50,7 @@ export const updateShoppingCartItem = async (req: Request, res: Response, next: 
 
         res.statusCode = 200;
         res.setHeader("Content-Type", "application/json")
-        res.json({ status: 200, message: 'Shopping Cart Item Successfully Updated' });
+        res.json({ status: 200, message: 'Shopping cart item successfully updated' });
 
     } catch (error) {
         next(error);
@@ -65,7 +61,7 @@ export const updateShoppingCartItem = async (req: Request, res: Response, next: 
 export const removeShoppingCartItem = async (req: Request, res: Response, next: NextFunction) => {
     try {
         if (!req.params) {
-            next({ status: 404, message: `No parameters passed`, stack: Error().stack });
+            next({ status: 404, message: `No parameters were passed in the request`, stack: Error().stack });
         }
 
         const id = req.params.id;
@@ -84,7 +80,7 @@ export const removeShoppingCartItem = async (req: Request, res: Response, next: 
 export const removeShoppingCartItemsOfUser = async (req: Request, res: Response, next: NextFunction) => {
     try {
         if (!req.params) {
-            next({ status: 404, message: `No parameters passed`, stack: Error().stack });
+            next({ status: 404, message: `No parameters were passed in the request`, stack: Error().stack });
         }
 
         const id = req.params.id;
