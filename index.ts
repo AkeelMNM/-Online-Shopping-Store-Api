@@ -10,6 +10,7 @@ import ErrorHandler from './middlewares/ErrorHandler';
 import { indexRouter } from './routes/index';
 import { productsRouter } from './routes/productsRouter'
 import { shoppingCartRouter } from './routes/shoppingCartRouter';
+import { contentRouter } from './routes/contentRouter';
 dotenv.config();
 
 /**
@@ -48,6 +49,7 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/product', productsRouter);
 app.use('/cart', shoppingCartRouter);
+app.use('/content', contentRouter);
 
 /**
  * catch 404 and forward to error handler
