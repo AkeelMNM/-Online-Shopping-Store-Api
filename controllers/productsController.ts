@@ -89,3 +89,20 @@ export const getProduct = (req: Request, res: Response, next: NextFunction) => {
     }
 
 }
+
+export const getBestSellerProducts = (req: Request, res: Response, next: NextFunction) => {
+    try {
+
+        const bestSellerProducts: Product[] = products.filter(item => item.isBestSeller);
+
+        if (!bestSellerProducts) {
+            next({ status: 404, message: `Best seller products not found`, stack: Error().stack });
+        } else {
+            res.statusCode = 200;
+            res.setHeader("Content-Type", "application/json")
+            res.json(bestSellerProducts);
+        }
+    } catch (error) {
+        next(error);
+    }
+}

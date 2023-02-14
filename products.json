@@ -289,7 +289,7 @@
             "Dress"
         ],
         "title": "Tiered Wave Shirt Dress",
-        "isBestSeller": true,
+        "isBestSeller": false,
         "variants": [
             {
                 "id": "var-25",
