@@ -6,12 +6,18 @@ import logger from "morgan";
 import mongoose from 'mongoose';
 import cors from "cors";
 import * as dotenv from 'dotenv';
+import helmet from 'helmet';
+import fs from 'fs';
+import https from 'https';
 import ErrorHandler from './middlewares/ErrorHandler';
 import { indexRouter } from './routes/index';
 import { productsRouter } from './routes/productsRouter'
 import { shoppingCartRouter } from './routes/shoppingCartRouter';
 import { contentRouter } from './routes/contentRouter';
 dotenv.config();
+
+const key = fs.readFileSync('./CA/localhost-key.pem');
+const cert = fs.readFileSync('./CA/localhost.pem');
 
 /**
  * Connecting to MongoDB Server
@@ -29,6 +35,7 @@ connect.then(
 );
 
 const app = express();
+app.use(helmet());
 
 /**
  * view engine setup
@@ -63,12 +70,18 @@ app.use(function (req: Request, res: Response, next: NextFunction) {
  */
 app.use(ErrorHandler);
 
+
+/**
+ * Creating Https server
+ */
+const server = https.createServer({ key, cert }, app);
+
 /**
  * Assign in Port
  */
 const port = process.env.PORT || 3000;
 
-app.listen(port, () => {
+server.listen(port, () => {
   console.log(`server is listening on port ${port}....`);
 })
 
