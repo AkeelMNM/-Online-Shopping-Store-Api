@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express'
 import ShoppingCart from '../models/shoppingCart';
 
-export const storeShoppingCartItem = async (req: Request, res: Response, next: NextFunction) => {
+export const storeShoppingCartItem = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
         if (!req.body) {
             next({ status: 404, message: `No data was passed in the request body`, stack: Error().stack });
@@ -20,7 +20,7 @@ export const storeShoppingCartItem = async (req: Request, res: Response, next: N
 
 }
 
-export const getShoppingCartItemByUser = async (req: Request, res: Response, next: NextFunction) => {
+export const getShoppingCartItemByUser = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
         if (!req.params) {
             next({ status: 404, message: `No parameters were passed in the request`, stack: Error().stack });
@@ -39,7 +39,7 @@ export const getShoppingCartItemByUser = async (req: Request, res: Response, nex
 
 }
 
-export const updateShoppingCartItem = async (req: Request, res: Response, next: NextFunction) => {
+export const updateShoppingCartItem = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
         if (!req.params && !req.body) {
             next({ status: 404, message: `No data was passed in parameters or in the body of the request.`, stack: Error().stack });
@@ -58,7 +58,7 @@ export const updateShoppingCartItem = async (req: Request, res: Response, next: 
 
 }
 
-export const removeShoppingCartItem = async (req: Request, res: Response, next: NextFunction) => {
+export const removeShoppingCartItem = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
         if (!req.params) {
             next({ status: 404, message: `No parameters were passed in the request`, stack: Error().stack });
@@ -77,7 +77,7 @@ export const removeShoppingCartItem = async (req: Request, res: Response, next: 
 
 }
 
-export const removeShoppingCartItemsOfUser = async (req: Request, res: Response, next: NextFunction) => {
+export const removeShoppingCartItemsOfUser = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
         if (!req.params) {
             next({ status: 404, message: `No parameters were passed in the request`, stack: Error().stack });

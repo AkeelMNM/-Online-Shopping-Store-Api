@@ -16,7 +16,7 @@
                 "price": "$25",
                 "stock": 0,
                 "discount": "$5",
-                "image": "http://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Long%20Sleeve%20Slim%20Fit%20-%20Blue.png"
+                "image": "https://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Long%20Sleeve%20Slim%20Fit%20-%20Blue.png"
             },
             {
                 "id": "var-1",
@@ -25,7 +25,7 @@
                 "price": "$25",
                 "stock": 165,
                 "discount": "$5",
-                "image": "http://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Long%20Sleeve%20Slim%20Fit%20-%20Blue.png"
+                "image": "https://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Long%20Sleeve%20Slim%20Fit%20-%20Blue.png"
             },
             {
                 "id": "var-2",
@@ -34,7 +34,7 @@
                 "price": "$25",
                 "stock": 183,
                 "discount": "$5",
-                "image": "http://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Long%20Sleeve%20Slim%20Fit%20-%20Blue.png"
+                "image": "https://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Long%20Sleeve%20Slim%20Fit%20-%20Blue.png"
             },
             {
                 "id": "var-3",
@@ -43,7 +43,7 @@
                 "price": "$25",
                 "stock": 125,
                 "discount": "$5",
-                "image": "http://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Long%20Sleeve%20Slim%20Fit%20-%20Blue.png"
+                "image": "https://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Long%20Sleeve%20Slim%20Fit%20-%20Blue.png"
             },
             {
                 "id": "var-4",
@@ -52,7 +52,7 @@
                 "price": "$25",
                 "stock": 267,
                 "discount": "$5",
-                "image": "http://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Long%20Sleeve%20Slim%20Fit%20-%20Black.png"
+                "image": "https://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Long%20Sleeve%20Slim%20Fit%20-%20Black.png"
             },
             {
                 "id": "var-5",
@@ -61,7 +61,7 @@
                 "price": "$25",
                 "stock": 123,
                 "discount": "$5",
-                "image": "http://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Long%20Sleeve%20Slim%20Fit%20-%20Black.png"
+                "image": "https://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Long%20Sleeve%20Slim%20Fit%20-%20Black.png"
             },
             {
                 "id": "var-6",
@@ -70,7 +70,7 @@
                 "price": "$25",
                 "stock": 66,
                 "discount": "$5",
-                "image": "http://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Long%20Sleeve%20Slim%20Fit%20-%20Black.png"
+                "image": "https://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Long%20Sleeve%20Slim%20Fit%20-%20Black.png"
             },
             {
                 "id": "var-7",
@@ -79,7 +79,7 @@
                 "price": "$25",
                 "stock": 99,
                 "discount": "$5",
-                "image": "http://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Long%20Sleeve%20Slim%20Fit%20-%20Violet.png"
+                "image": "https://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Long%20Sleeve%20Slim%20Fit%20-%20Violet.png"
             },
             {
                 "id": "var-8",
@@ -88,7 +88,7 @@
                 "price": "$25",
                 "stock": 154,
                 "discount": "$5",
-                "image": "http://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Long%20Sleeve%20Slim%20Fit%20-%20Violet.png"
+                "image": "https://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Long%20Sleeve%20Slim%20Fit%20-%20Violet.png"
             },
             {
                 "id": "var-9",
@@ -97,7 +97,7 @@
                 "price": "$25",
                 "stock": 153,
                 "discount": "$5",
-                "image": "http://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Long%20Sleeve%20Slim%20Fit%20-%20Violet.png"
+                "image": "https://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Long%20Sleeve%20Slim%20Fit%20-%20Violet.png"
             },
             {
                 "id": "var-91",
@@ -106,7 +106,7 @@
                 "price": "$25",
                 "stock": 0,
                 "discount": "$5",
-                "image": "http://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Long%20Sleeve%20Slim%20Fit%20-%20Violet.png"
+                "image": "https://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Long%20Sleeve%20Slim%20Fit%20-%20Violet.png"
             }
         ]
     },
@@ -126,7 +126,7 @@
                 "price": "$35",
                 "stock": 0,
                 "discount": "5%",
-                "image": "http://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Short%20Sleeve%20Slim%20Fit%20-%20Blue.png"
+                "image": "https://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Short%20Sleeve%20Slim%20Fit%20-%20Blue.png"
             },
             {
                 "id": "var-101",
@@ -135,7 +135,7 @@
                 "price": "$35",
                 "stock": 152,
                 "discount": "5%",
-                "image": "http://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Short%20Sleeve%20Slim%20Fit%20-%20Blue.png"
+                "image": "https://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Short%20Sleeve%20Slim%20Fit%20-%20Blue.png"
             },
             {
                 "id": "var-11",
@@ -144,7 +144,7 @@
                 "price": "$35",
                 "stock": 133,
                 "discount": "5%",
-                "image": "http://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Short%20Sleeve%20Slim%20Fit%20-%20Blue.png"
+                "image": "https://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Short%20Sleeve%20Slim%20Fit%20-%20Blue.png"
             },
             {
                 "id": "var-12",
@@ -153,7 +153,7 @@
                 "price": "$35",
                 "stock": 55,
                 "discount": "5%",
-                "image": "http://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Short%20Sleeve%20Slim%20Fit%20-%20Blue.png"
+                "image": "https://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Short%20Sleeve%20Slim%20Fit%20-%20Blue.png"
             },
             {
                 "id": "var-13",
@@ -161,7 +161,7 @@
                 "color": "gray",
                 "price": "$35",
                 "stock": 55,
-                "image": "http://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Short%20Sleeve%20Slim%20Fit%20-%20Gray.png"
+                "image": "https://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Short%20Sleeve%20Slim%20Fit%20-%20Gray.png"
             },
             {
                 "id": "var-14",
@@ -170,7 +170,7 @@
                 "price": "$35",
                 "stock": 167,
                 "discount": "5%",
-                "image": "http://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Short%20Sleeve%20Slim%20Fit%20-%20Gray.png"
+                "image": "https://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Short%20Sleeve%20Slim%20Fit%20-%20Gray.png"
             },
             {
                 "id": "var-15",
@@ -179,7 +179,7 @@
                 "price": "$35",
                 "stock": 176,
                 "discount": "5%",
-                "image": "http://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Short%20Sleeve%20Slim%20Fit%20-%20Gray.png"
+                "image": "https://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Short%20Sleeve%20Slim%20Fit%20-%20Gray.png"
             },
             {
                 "id": "var-16",
@@ -188,7 +188,7 @@
                 "price": "$35",
                 "stock": 129,
                 "discount": "5%",
-                "image": "http://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Short%20Sleeve%20Slim%20Fit%20-%20Gray.png"
+                "image": "https://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Short%20Sleeve%20Slim%20Fit%20-%20Gray.png"
             }
         ]
     },
@@ -209,7 +209,7 @@
                 "color": "gray",
                 "price": "$20",
                 "stock": 212,
-                "image": "http://localhost:5000/public/images/Soft%20Summer%20Short%20Slim%20Fit%20-%20Gray.png"
+                "image": "https://localhost:5000/public/images/Soft%20Summer%20Short%20Slim%20Fit%20-%20Gray.png"
             },
             {
                 "id": "var-18",
@@ -217,7 +217,7 @@
                 "color": "gray",
                 "price": "$20",
                 "stock": 166,
-                "image": "http://localhost:5000/public/images/Soft%20Summer%20Short%20Slim%20Fit%20-%20Gray.png"
+                "image": "https://localhost:5000/public/images/Soft%20Summer%20Short%20Slim%20Fit%20-%20Gray.png"
             },
             {
                 "id": "var-19",
@@ -225,7 +225,7 @@
                 "color": "gray",
                 "price": "$20",
                 "stock": 155,
-                "image": "http://localhost:5000/public/images/Soft%20Summer%20Short%20Slim%20Fit%20-%20Gray.png"
+                "image": "https://localhost:5000/public/images/Soft%20Summer%20Short%20Slim%20Fit%20-%20Gray.png"
             },
             {
                 "id": "var-20",
@@ -233,7 +233,7 @@
                 "color": "pink",
                 "price": "$20",
                 "stock": 167,
-                "image": "http://localhost:5000/public/images/Soft%20Summer%20Short%20Slim%20Fit%20-%20Pink.png"
+                "image": "https://localhost:5000/public/images/Soft%20Summer%20Short%20Slim%20Fit%20-%20Pink.png"
             },
             {
                 "id": "var-21",
@@ -241,7 +241,7 @@
                 "color": "pink",
                 "price": "$20",
                 "stock": 132,
-                "image": "http://localhost:5000/public/images/Soft%20Summer%20Short%20Slim%20Fit%20-%20Pink.png"
+                "image": "https://localhost:5000/public/images/Soft%20Summer%20Short%20Slim%20Fit%20-%20Pink.png"
             }
         ]
     },
@@ -260,7 +260,7 @@
                 "color": "blue",
                 "price": "$45",
                 "stock": 23,
-                "image": "http://localhost:5000/public/images/Icy%20Blue%20Polo%20Dress%20-%20Blue.png"
+                "image": "https://localhost:5000/public/images/Icy%20Blue%20Polo%20Dress%20-%20Blue.png"
             },
             {
                 "id": "var-23",
@@ -269,7 +269,7 @@
                 "price": "$45",
                 "stock": 155,
                 "discount": "$5",
-                "image": "http://localhost:5000/public/images/Icy%20Blue%20Polo%20Dress%20-%20Blue.png"
+                "image": "https://localhost:5000/public/images/Icy%20Blue%20Polo%20Dress%20-%20Blue.png"
             },
             {
                 "id": "var-24",
@@ -278,7 +278,7 @@
                 "price": "$45",
                 "stock": 177,
                 "discount": "$10",
-                "image": "http://localhost:5000/public/images/Icy%20Blue%20Polo%20Dress%20-%20Blue.png"
+                "image": "https://localhost:5000/public/images/Icy%20Blue%20Polo%20Dress%20-%20Blue.png"
             }
         ]
     },
@@ -298,7 +298,7 @@
                 "price": "$55",
                 "stock": 67,
                 "discount": "$5",
-                "image": "http://localhost:5000/public/images/Tiered%20Wave%20Shirt%20Dress%20-%20Navy%20&%20White.png"
+                "image": "https://localhost:5000/public/images/Tiered%20Wave%20Shirt%20Dress%20-%20Navy%20&%20White.png"
             },
             {
                 "id": "var-26",
@@ -307,7 +307,7 @@
                 "price": "$55",
                 "stock": 55,
                 "discount": "$5",
-                "image": "http://localhost:5000/public/images/Tiered%20Wave%20Shirt%20Dress%20-%20Navy%20&%20White.png"
+                "image": "https://localhost:5000/public/images/Tiered%20Wave%20Shirt%20Dress%20-%20Navy%20&%20White.png"
             },
             {
                 "id": "var-27",
@@ -316,7 +316,7 @@
                 "price": "$55",
                 "stock": 100,
                 "discount": "15%",
-                "image": "http://localhost:5000/public/images/Tiered%20Wave%20Shirt%20Dress%20-%20Navy%20&%20White.png"
+                "image": "https://localhost:5000/public/images/Tiered%20Wave%20Shirt%20Dress%20-%20Navy%20&%20White.png"
             }
         ]
     }
