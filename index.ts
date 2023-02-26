@@ -16,8 +16,8 @@ import { shoppingCartRouter } from './routes/shoppingCartRouter';
 import { contentRouter } from './routes/contentRouter';
 dotenv.config();
 
-const key = fs.readFileSync('./CA/localhost-key.pem');
-const cert = fs.readFileSync('./CA/localhost.pem');
+const key = fs.readFileSync(process.env.SSL_CERTIFICATE_PRIVATE_KEY_PATH || '');
+const cert = fs.readFileSync(process.env.SSL_CERTIFICATE_PATH || '');
 
 /**
  * Connecting to MongoDB Server
