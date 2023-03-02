@@ -6,12 +6,19 @@ import logger from "morgan";
 import mongoose from 'mongoose';
 import cors from "cors";
 import * as dotenv from 'dotenv';
+import helmet from 'helmet';
+import fs from 'fs';
+import https from 'https';
+import cookieParser from 'cookie-parser';
 import ErrorHandler from './middlewares/ErrorHandler';
 import { indexRouter } from './routes/index';
 import { productsRouter } from './routes/productsRouter'
 import { shoppingCartRouter } from './routes/shoppingCartRouter';
 import { contentRouter } from './routes/contentRouter';
 dotenv.config();
+
+const key = fs.readFileSync(process.env.SSL_CERTIFICATE_PRIVATE_KEY_PATH || '');
+const cert = fs.readFileSync(process.env.SSL_CERTIFICATE_PATH || '');
 
 /**
  * Connecting to MongoDB Server
@@ -29,6 +36,14 @@ connect.then(
 );
 
 const app = express();
+app.use(cors({
+  origin: ['https://localhost:3000'],
+  credentials: true
+}));
+app.use(helmet());
+app.use(cookieParser());
+app.use(json());
+
 
 /**
  * view engine setup
@@ -41,11 +56,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use(json());
-app.use(cors());
 
 app.use('/public', express.static(path.join(__dirname, 'public')));
-
 app.use('/', indexRouter);
 app.use('/product', productsRouter);
 app.use('/cart', shoppingCartRouter);
@@ -63,12 +75,18 @@ app.use(function (req: Request, res: Response, next: NextFunction) {
  */
 app.use(ErrorHandler);
 
+
+/**
+ * Creating Https server
+ */
+const server = https.createServer({ key, cert }, app);
+
 /**
  * Assign in Port
  */
 const port = process.env.PORT || 3000;
 
-app.listen(port, () => {
+server.listen(port, () => {
   console.log(`server is listening on port ${port}....`);
 })
 

@@ -9,7 +9,7 @@ const products: Product[] = JSON.parse(fs.readFileSync(productsJsonPath, { encod
 const productsFilterJsonPath = path.join(__dirname, '../productFilter.json');
 const productFilter = JSON.parse(fs.readFileSync(productsFilterJsonPath, { encoding: 'utf-8' }));
 
-export const getAllProducts = (req: Request, res: Response, next: NextFunction) => {
+export const getAllProducts = (req: Request, res: Response, next: NextFunction): void => {
     try {
         if (!products) {
             next({ status: 404, message: `Products not found`, stack: Error().stack });
@@ -24,7 +24,7 @@ export const getAllProducts = (req: Request, res: Response, next: NextFunction) 
 
 }
 
-export const getProductsFilters = (req: Request, res: Response, next: NextFunction) => {
+export const getProductsFilters = (req: Request, res: Response, next: NextFunction): void => {
     try {
         if (!productFilter) {
             next({ status: 404, message: `Products Filters not found`, stack: Error().stack });
@@ -39,7 +39,7 @@ export const getProductsFilters = (req: Request, res: Response, next: NextFuncti
 
 }
 
-export const getProductsByCategory = (req: Request, res: Response, next: NextFunction) => {
+export const getProductsByCategory = (req: Request, res: Response, next: NextFunction): void => {
     try {
         const categorizedProducts: Product[] = new Array();
         const query = (<string>req.query.name).split(';');
@@ -68,7 +68,7 @@ export const getProductsByCategory = (req: Request, res: Response, next: NextFun
 
 
 
-export const getProduct = (req: Request, res: Response, next: NextFunction) => {
+export const getProduct = (req: Request, res: Response, next: NextFunction): void => {
     try {
         if (!req.params) {
             next({ status: 404, message: `No parameters passed`, stack: Error().stack });
@@ -88,4 +88,21 @@ export const getProduct = (req: Request, res: Response, next: NextFunction) => {
         next(error);
     }
 
+}
+
+export const getBestSellerProducts = (req: Request, res: Response, next: NextFunction): void => {
+    try {
+
+        const bestSellerProducts: Product[] = products.filter(item => item.isBestSeller);
+
+        if (!bestSellerProducts) {
+            next({ status: 404, message: `Best seller products not found`, stack: Error().stack });
+        } else {
+            res.statusCode = 200;
+            res.setHeader("Content-Type", "application/json")
+            res.json(bestSellerProducts);
+        }
+    } catch (error) {
+        next(error);
+    }
 }

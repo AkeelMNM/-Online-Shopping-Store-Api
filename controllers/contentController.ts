@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express'
 import Content from '../models/content';
 
-export const storeContent = async (req: Request, res: Response, next: NextFunction) => {
+export const storeContent = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
         if (!req.body) {
             next({ status: 404, message: `No data was passed in the request body`, stack: Error().stack });
@@ -20,7 +20,7 @@ export const storeContent = async (req: Request, res: Response, next: NextFuncti
 
 }
 
-export const getAllContent = async (req: Request, res: Response, next: NextFunction) => {
+export const getAllContent = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
         const content = await Content.find({});
 
