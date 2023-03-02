@@ -9,6 +9,7 @@ import * as dotenv from 'dotenv';
 import helmet from 'helmet';
 import fs from 'fs';
 import https from 'https';
+import cookieParser from 'cookie-parser';
 import ErrorHandler from './middlewares/ErrorHandler';
 import { indexRouter } from './routes/index';
 import { productsRouter } from './routes/productsRouter'
@@ -35,7 +36,14 @@ connect.then(
 );
 
 const app = express();
+app.use(cors({
+  origin: ['https://localhost:3000'],
+  credentials: true
+}));
 app.use(helmet());
+app.use(cookieParser());
+app.use(json());
+
 
 /**
  * view engine setup
@@ -48,11 +56,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use(json());
-app.use(cors());
 
 app.use('/public', express.static(path.join(__dirname, 'public')));
-
 app.use('/', indexRouter);
 app.use('/product', productsRouter);
 app.use('/cart', shoppingCartRouter);
