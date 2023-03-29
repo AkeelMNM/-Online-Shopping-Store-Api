@@ -10,7 +10,7 @@ shoppingCartRouter.get('/:id', authenticateToken, getShoppingCartItemByUser);
 
 shoppingCartRouter.put('/:id', authenticateToken, updateShoppingCartItem);
 
-shoppingCartRouter.put('/payment/status', updateShoppingCartPaymentStatus);
+shoppingCartRouter.put('/payment/status', authenticateToken, updateShoppingCartPaymentStatus);
 
 shoppingCartRouter.delete('/:id', authenticateToken, removeShoppingCartItem);
 
