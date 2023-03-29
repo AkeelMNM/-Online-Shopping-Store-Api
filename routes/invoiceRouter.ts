@@ -1,10 +1,11 @@
 import express from 'express';
 import { storeUserPaymentDetails, removeUserPaymentDetails } from '../controllers/invoiceController';
+import { authenticateToken } from '../authenticate';
 
 const invoiceRouter = express.Router();
 
-invoiceRouter.post('/', storeUserPaymentDetails);
+invoiceRouter.post('/', authenticateToken, storeUserPaymentDetails);
 
-invoiceRouter.delete('/', removeUserPaymentDetails);
+invoiceRouter.delete('/', authenticateToken, removeUserPaymentDetails);
 
 export { invoiceRouter };

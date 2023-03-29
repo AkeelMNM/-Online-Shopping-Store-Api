@@ -1,6 +1,6 @@
 import express from 'express';
 import { storeShoppingCartItem, getShoppingCartItemByUser, removeShoppingCartItem, removeShoppingCartItemsOfUser, updateShoppingCartItem, updateShoppingCartPaymentStatus } from '../controllers/shoppingCartController';
-import { authenticateToken } from '../middlewares/authenticate';
+import { authenticateToken } from '../authenticate';
 
 const shoppingCartRouter = express.Router();
 
