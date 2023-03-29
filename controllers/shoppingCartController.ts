@@ -95,20 +95,20 @@ export const removeShoppingCartItemsOfUser = async (req: Request, res: Response,
     }
 }
 
-export const checkOutCart = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+export const updateShoppingCartPaymentStatus = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
-        if (!req.params) {
-            next({ status: 404, message: `No parameters were passed in the request`, stack: Error().stack });
+        if (!req.body) {
+            next({ status: 404, message: `No data was passed in the body of the request.`, stack: Error().stack });
         }
-
-        const id = req.params.id;
-        await ShoppingCart.findByIdAndUpdate({ _id: id }, req.body, { new: true });
+   
+        await ShoppingCart.updateMany({ "_id": { $in: req.body.itemIds } }, { $set: { "isPaymentComplete": true } }, { multi: true });
 
         res.statusCode = 200;
         res.setHeader("Content-Type", "application/json")
-        res.json({ status: 200, message: `Payment made successfully. The order is processing for delivery` });
+        res.json({ status: 200, message: 'Shopping cart item payment status updated' });
 
     } catch (error) {
         next(error);
     }
+
 }

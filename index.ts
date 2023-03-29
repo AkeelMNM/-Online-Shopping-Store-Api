@@ -10,11 +10,12 @@ import helmet from 'helmet';
 import fs from 'fs';
 import https from 'https';
 import cookieParser from 'cookie-parser';
-import ErrorHandler from './middlewares/ErrorHandler';
+import ErrorHandler from './middlewares/errorHandler';
 import { indexRouter } from './routes/index';
 import { productsRouter } from './routes/productsRouter'
 import { shoppingCartRouter } from './routes/shoppingCartRouter';
 import { contentRouter } from './routes/contentRouter';
+import { invoiceRouter } from './routes/invoiceRouter';
 dotenv.config();
 
 const key = fs.readFileSync(process.env.SSL_CERTIFICATE_PRIVATE_KEY_PATH || '');
@@ -62,6 +63,7 @@ app.use('/', indexRouter);
 app.use('/product', productsRouter);
 app.use('/cart', shoppingCartRouter);
 app.use('/content', contentRouter);
+app.use('/payment', invoiceRouter);
 
 /**
  * catch 404 and forward to error handler
