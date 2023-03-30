@@ -14,6 +14,8 @@ type ShoppingCart = {
     price: number;
     isFreeShipping: boolean;
     image: string;
+    isPaymentComplete: boolean
+
 }
 
 const ShoppingCartSchema = new Schema<ShoppingCart>(
@@ -66,6 +68,10 @@ const ShoppingCartSchema = new Schema<ShoppingCart>(
             type: String,
             default: "",
             required: true,
+        },
+        isPaymentComplete: {
+            type: Boolean,
+            default: false
         },
     },
     {

@@ -94,3 +94,21 @@ export const removeShoppingCartItemsOfUser = async (req: Request, res: Response,
         next(error);
     }
 }
+
+export const updateShoppingCartPaymentStatus = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+    try {
+        if (!req.body) {
+            next({ status: 404, message: `No data was passed in the body of the request.`, stack: Error().stack });
+        }
+   
+        await ShoppingCart.updateMany({ "_id": { $in: req.body.itemIds } }, { $set: { isPaymentComplete: true } }, { multi: true });
+
+        res.statusCode = 200;
+        res.setHeader("Content-Type", "application/json")
+        res.json({ status: 200, message: 'Shopping cart item payment status updated' });
+
+    } catch (error) {
+        next(error);
+    }
+
+}
