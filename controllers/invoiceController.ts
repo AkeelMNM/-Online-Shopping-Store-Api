@@ -7,9 +7,7 @@ export const storeUserPaymentDetails = async (req: Request, res: Response, next:
             next({ status: 404, message: `No data was passed in the request body`, stack: Error().stack });
         }
 
-        const data = req.body;
-        console.log(data);
-        
+        const data = req.body; 
         await Invoice.create(data);
 
         res.statusCode = 200;

@@ -101,7 +101,7 @@ export const updateShoppingCartPaymentStatus = async (req: Request, res: Respons
             next({ status: 404, message: `No data was passed in the body of the request.`, stack: Error().stack });
         }
    
-        await ShoppingCart.updateMany({ "_id": { $in: req.body.itemIds } }, { $set: { "isPaymentComplete": true } }, { multi: true });
+        await ShoppingCart.updateMany({ "_id": { $in: req.body.itemIds } }, { $set: { isPaymentComplete: true } }, { multi: true });
 
         res.statusCode = 200;
         res.setHeader("Content-Type", "application/json")
