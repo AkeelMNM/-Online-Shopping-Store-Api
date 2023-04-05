@@ -7,19 +7,14 @@ import mongoose from 'mongoose';
 import cors from "cors";
 import * as dotenv from 'dotenv';
 import helmet from 'helmet';
-import fs from 'fs';
-import https from 'https';
 import cookieParser from 'cookie-parser';
-import ErrorHandler from './middlewares/errorHandler';
+import ErrorHandler from './middlewares/error-handler';
 import { indexRouter } from './routes/index';
-import { productsRouter } from './routes/productsRouter'
-import { shoppingCartRouter } from './routes/shoppingCartRouter';
-import { contentRouter } from './routes/contentRouter';
-import { invoiceRouter } from './routes/invoiceRouter';
+import { productsRouter } from './routes/products-router'
+import { shoppingCartRouter } from './routes/shoppingcart-router';
+import { contentRouter } from './routes/content-router';
+import { invoiceRouter } from './routes/invoice-router';
 dotenv.config();
-
-const key = fs.readFileSync(process.env.SSL_CERTIFICATE_PRIVATE_KEY_PATH || '');
-const cert = fs.readFileSync(process.env.SSL_CERTIFICATE_PATH || '');
 
 /**
  * Connecting to MongoDB Server
@@ -78,17 +73,5 @@ app.use(function (req: Request, res: Response, next: NextFunction) {
 app.use(ErrorHandler);
 
 
-/**
- * Creating Https server
- */
-const server = https.createServer({ key, cert }, app);
-
-/**
- * Assign in Port
- */
-const port = process.env.PORT || 3000;
-
-server.listen(port, () => {
-  console.log(`server is listening on port ${port}....`);
-})
+export default app;
 
