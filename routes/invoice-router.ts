@@ -6,6 +6,6 @@ const invoiceRouter = express.Router();
 
 invoiceRouter.post('/', authenticateToken, storeUserPaymentDetails);
 
-invoiceRouter.delete('/', authenticateToken, removeUserPaymentDetails);
+invoiceRouter.delete('/:id', authenticateToken, removeUserPaymentDetails);
 
 export { invoiceRouter };
