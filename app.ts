@@ -8,7 +8,7 @@ import cors from "cors";
 import * as dotenv from 'dotenv';
 import helmet from 'helmet';
 import cookieParser from 'cookie-parser';
-import ErrorHandler from './middlewares/error-handler';
+import errorHandler from './middlewares/error-handler';
 import { indexRouter } from './routes/index';
 import { productsRouter } from './routes/products-router'
 import { shoppingCartRouter } from './routes/shoppingcart-router';
@@ -70,7 +70,7 @@ app.use(function (req: Request, res: Response, next: NextFunction) {
 /**
  * error handler
  */
-app.use(ErrorHandler);
+app.use(errorHandler);
 
 
 export default app;

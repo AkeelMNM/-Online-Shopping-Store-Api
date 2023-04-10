@@ -1,12 +1,13 @@
 import { Request, Response, NextFunction } from 'express';
 import https from 'https';
+import * as dotenv from 'dotenv';
+dotenv.config();
+
+const rootCas = require('ssl-root-cas').create();
+rootCas.addFile(__dirname + process.env.SSL_ROOT_CA_CERTIFICATE_PATH || '');
+https.globalAgent.options.ca = rootCas;
 
 export const authenticateToken = (req: Request, res: Response, next: NextFunction) => {
-
-    const rootCas = require('ssl-root-cas').create();
-    rootCas.addFile(__dirname + process.env.SSL_ROOT_CA_CERTIFICATE_PATH || '');
-    https.globalAgent.options.ca = rootCas;
-
     const queryParams = {
         host: 'localhost',
         port: 8443,
