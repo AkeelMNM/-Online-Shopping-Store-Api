@@ -1,5 +1,5 @@
 import express from 'express';
-import { getAllContent, storeContent } from '../controllers/contentController';
+import { getAllContent, storeContent } from '../controllers/content-controller';
 
 const contentRouter = express.Router();
 
