@@ -1,14 +1,14 @@
-import https from 'https';
-import fs from 'fs';
+import http from 'http';
+// import fs from 'fs';
 import app from './app';
 
-const key = fs.readFileSync(process.env.SSL_CERTIFICATE_PRIVATE_KEY_PATH || '');
-const cert = fs.readFileSync(process.env.SSL_CERTIFICATE_PATH || '');
+// const key = fs.readFileSync(process.env.SSL_CERTIFICATE_PRIVATE_KEY_PATH || '');
+// const cert = fs.readFileSync(process.env.SSL_CERTIFICATE_PATH || '');
 
 /**
- * Creating Https server
+ * Creating Http server
  */
-const server = https.createServer({ key, cert }, app);
+const server = http.createServer(app);
 
 /**
  * Assign in Port
